@@ -26,6 +26,12 @@ public class StackAndQueue {
 		sq.queue(30);
 		sq.queue(70);
 		sq.display();
+		sq.dequeue();
+		sq.display();
+	}
+
+	private void dequeue() {
+		ll.deleteFirst();
 	}
 
 	private void queue(int i) {
