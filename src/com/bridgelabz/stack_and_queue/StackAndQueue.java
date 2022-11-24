@@ -20,6 +20,7 @@ public class StackAndQueue {
 		ll.deleteLast(); // removing last element from the stack
 	}
 
+	// checking the nodes added in the stack
 	private void display() {
 		ll.printList();
 	}
