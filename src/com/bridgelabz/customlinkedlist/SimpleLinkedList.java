@@ -3,8 +3,8 @@ package com.bridgelabz.customlinkedlist;
 import com.bridgelabz.customlinkedlist.SimpleLinkedList;
 import com.bridgelabz.customlinkedlist.SimpleLinkedList.Node;
 
-public class SimpleLinkedList implements Comparable<SimpleLinkedList> {
-	Node head;
+public class SimpleLinkedList {
+	public Node head;
 
 	static class Node {
 		Integer data;
@@ -13,10 +13,6 @@ public class SimpleLinkedList implements Comparable<SimpleLinkedList> {
 		public Node(int data2) {
 			this.data = data2;
 			this.next = null;
-		}
-
-		public int compareTo(Integer tempNode) {
-			return this.data.compareTo(tempNode);
 		}
 
 	}
@@ -97,6 +93,8 @@ public class SimpleLinkedList implements Comparable<SimpleLinkedList> {
 		System.out.println("*********************************************************");
 		ll.sort();
 		ll.printList();
+		System.out.println("***************************");
+		System.out.println(ll.stackpeek());
 	}
 
 	public void sort() {
@@ -123,17 +121,6 @@ public class SimpleLinkedList implements Comparable<SimpleLinkedList> {
 				}
 				current = current.next;
 			}
-		}
-	}
-
-	@Override
-	public int compareTo(SimpleLinkedList o) {
-		if (this.head.data > head.data) {
-			return -1;
-		} else if (this.head.data == head.data) {
-			return 0;
-		} else {
-			return 1;
 		}
 	}
 
@@ -284,5 +271,28 @@ public class SimpleLinkedList implements Comparable<SimpleLinkedList> {
 		newNode.next = head;
 		// assigning the new Node reference to the head reference
 		head = newNode;
+	}
+	
+
+	
+	public int stackpeek() {
+
+		if (head == null) {
+			System.out.println("List is empty");
+			return -1;
+		}
+		if (head.next == null) {
+			System.out.println("head is retrieved sucessfully!");
+			return head.data;
+		}
+
+		Node secondLast = head;
+		Node last = head.next.next;
+		while (last != null) {
+			last = last.next;
+			secondLast = secondLast.next;
+		}
+		System.out.println("Last element is retrived sucessfully!");
+		return secondLast.next.data;
 	}
 }

@@ -14,6 +14,17 @@ public class StackAndQueue {
 		sq.display();
 		sq.pop();
 		sq.display();
+		// UC2: popping the elements from the linked list till it's empty
+		// peeking the last element from the stack
+		System.out.println(sq.peek());
+		sq.pop();
+		sq.display();
+		sq.pop();
+		sq.display();
+	}
+
+	private int peek() {
+		return ll.stackpeek();
 	}
 
 	private void pop() {
