@@ -21,6 +21,15 @@ public class StackAndQueue {
 		sq.display();
 		sq.pop();
 		sq.display();
+		// Queue Operations
+		sq.queue(56);
+		sq.queue(30);
+		sq.queue(70);
+		sq.display();
+	}
+
+	private void queue(int i) {
+		ll.append(i); // adding the elements in the last
 	}
 
 	private int peek() {
